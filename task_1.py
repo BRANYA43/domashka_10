@@ -4,12 +4,14 @@
 
 
 def save_file(name_file: str, text_list: list):
+    """Зберігає/дописує текс зі списку рядків. Кожен елемент списку дописуеться з нового рядка."""
     with open(name_file, 'a') as f:
         for text in text_list:
             f.write(f'{text}\n')
 
 
 def get_messengers_list() -> list:
+    """Повертає список рядків які ввів користувач. Запит продовжується поки користувач не введе пусту строку(enter)."""
     text_list = []
     text = ' '
     while text != '':

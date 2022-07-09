@@ -5,7 +5,8 @@
 from string import punctuation
 
 
-def delete_punctuation_from_text(text: str) -> str:
+def delete_punctuation(text: str) -> str:
+    """Видаляє пунктуацію з заданого тексту"""
     for symbol in text:
         if symbol in punctuation:
             text = text.replace(symbol, '')
@@ -13,7 +14,8 @@ def delete_punctuation_from_text(text: str) -> str:
 
 
 def is_palindrome(text: str) -> bool:
-    text = delete_punctuation_from_text(text.lower().replace(' ', ''))
+    """Перевіряє чи є заданний текст паліндромо. Не враховуе пунктуацію, прогалини та регістр літер."""
+    text = delete_punctuation(text.lower().replace(' ', ''))
     if text == text[::-1]:
         return True
     else:

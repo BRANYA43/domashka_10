@@ -5,6 +5,7 @@ from random import randint
 
 
 def shift_numbers(numbers: list, n: int) -> list:
+    """Зрушує список на зандану кількість n, вліво або вправо залежно від знаку n. Повертає зрушений список."""
     ret = []
     if n >= 0:
         ret.append(num >> abs(n) for num in numbers)
